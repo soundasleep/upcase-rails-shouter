@@ -37,3 +37,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
+
+# default in Rails 4
+# gem 'strong_parameters', '> 0.2.0'
+# for user authentication
+gem 'monban'
+gem 'monban-generators'
