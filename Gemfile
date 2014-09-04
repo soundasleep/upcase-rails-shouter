@@ -43,3 +43,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # for user authentication
 gem 'monban'
 gem 'monban-generators'
+
+# for image upload
+gem 'paperclip'
