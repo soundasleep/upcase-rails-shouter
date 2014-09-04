@@ -5,5 +5,5 @@ class Shout < ActiveRecord::Base
     order("created_at DESC")
   end
 
-  validates :body, presence: true
+  belongs_to :content, polymorphic: true
 end
