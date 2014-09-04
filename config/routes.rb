@@ -2,8 +2,11 @@ Rails.application.routes.draw do
 
   root to: 'homes#show', via: :get
 
+  resource :dashboard, only: [:show]
+  resources :shouts, only: [:create, :show]
+
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

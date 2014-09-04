@@ -10,11 +10,19 @@
 
   <%= link_to 'home', root_path %>
   <% if signed_in? %>
-    <%= current_user.username %>
+    <%= div_for current_user do %>
+      <%= link_to current_user.username, current_user %>
+    <% end %>
     <%= link_to 'signout', session_path, method: :delete %>
   <% else %>
     <%= link_to 'login', new_session_path %>
     <%= link_to 'signup', new_user_path %>
+  <% end %>
+
+  <% if alert %>
+    <div class="alert">
+      <%= alert %>
+    </div>
   <% end %>
 
 <%= yield %>

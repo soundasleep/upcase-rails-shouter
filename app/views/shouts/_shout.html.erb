@@ -1,0 +1,5 @@
+<li>
+  <strong><%= link_to shout.user.username, shout.user %></strong>
+  <%= shout.body %>
+  <small>(<%= link_to time_ago_in_words(shout.created_at), shout %> ago)</small>
+</li>
