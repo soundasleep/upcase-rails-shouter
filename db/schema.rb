@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904023052) do
+ActiveRecord::Schema.define(version: 20140904033348) do
+
+  create_table "follows", force: true do |t|
+    t.integer  "source_id"
+    t.integer  "target_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "follows", ["source_id"], name: "index_follows_on_source_id"
+  add_index "follows", ["target_id"], name: "index_follows_on_target_id"
 
   create_table "photo_shouts", force: true do |t|
     t.string   "image_file_name"

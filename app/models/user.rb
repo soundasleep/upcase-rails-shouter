@@ -4,4 +4,13 @@ class User < ActiveRecord::Base
   validates :username, presence: true
 
   has_many :shouts
+  has_many :follows, foreign_key: :source_id
+  has_many :followed_users, through: :follows, source: :target
+
+  has_many :reverse_follows, foreign_key: :target_id, class_name: 'Follow'
+  has_many :followers, through: :reverse_follows, source: :source
+
+  def follows?(user)
+    followed_users.include?(user)
+  end
 end
