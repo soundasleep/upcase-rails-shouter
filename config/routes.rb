@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   resources :photo_shouts, only: [:create]
 
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create, :show] do
+  resources :users, only: [:index, :new, :create, :show] do
     post 'follow' => 'follows#create'
-    post 'unfollow' => 'follows#destroy'
+    delete 'unfollow' => 'follows#destroy'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
