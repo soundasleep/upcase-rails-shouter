@@ -1,15 +1,15 @@
 <h1>Dashboard!</h1>
 
-<%= form_for @text_shout do |f| %>
+<%= form_for @dashboard.new_text_shout do |f| %>
   <%= f.text_field :body, placeholder: "Say something" %>
   <%= f.submit "Shout!" %>
 <% end %>
 
-<%= form_for @photo_shout do |f| %>
+<%= form_for @dashboard.new_photo_shout do |f| %>
   <%= f.file_field :image %>
   <%= f.submit "Shout!" %>
 <% end %>
 
 <ul>
-<%= render @shouts %>
+<%= render @dashboard.timeline %>
 </ul>
