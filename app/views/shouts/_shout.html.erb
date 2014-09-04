@@ -1,5 +1,8 @@
 <li>
-  <strong><%= link_to shout.user.username, shout.user %></strong>
+  <strong>
+    <%= gravatar shout.user %>
+    <%= link_to shout.user.username, shout.user %>
+  </strong>
   <%= render shout.content %>
   <small>(<%= link_to time_ago_in_words(shout.created_at), shout %> ago)</small>
 </li>
