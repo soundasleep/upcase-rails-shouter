@@ -46,3 +46,11 @@ gem 'monban-generators'
 
 # for image upload
 gem 'paperclip'
+
+# for searching
+gem 'sunspot_rails', '2.1.0'
+gem 'sunspot_solr', '2.1.0'
+
+# fixes sunspot issue https://github.com/sunspot/sunspot/issues/579
+# gem 'sunspot', github: 'betam4x/sunspot'
+gem 'sunspot', '2.1.0'

@@ -8,6 +8,13 @@ class Shout < ActiveRecord::Base
   belongs_to :content, polymorphic: true
   validates_associated :content
 
+  # from sunspot_rails
+  searchable do
+    text :content do
+      content.index
+    end
+  end
+
   # def self.search(term)
   #   ids = TextShout.where("body LIKE ?", "%#{term}%")
   #   text_shouts.where(content_id: ids)
