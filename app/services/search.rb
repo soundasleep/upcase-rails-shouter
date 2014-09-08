@@ -1,8 +1,8 @@
 class Search
-  attr_reader :hashtag
+  attr_reader :q
 
   def initialize(options = {})
-    @hashtag = options.fetch(:term, "")
+    @q = options.fetch(:q, "")
   end
 
   def shouts
@@ -12,6 +12,6 @@ class Search
   private
 
   def text_shouts
-    TextShout.where("body LIKE ?", "%#{hashtag}%")
+    TextShout.where("body LIKE ?", "%#{q}%")
   end
 end

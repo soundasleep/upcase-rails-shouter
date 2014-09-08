@@ -1,6 +1,6 @@
 class HashtagsController < ApplicationController
   def show
-    @search = Search.new(term: hashtag)
+    @search = Search.new(q: "##{hashtag}")
 
     # @hashtag = params[:id]
     # @shouts = Shout.search("##{@hashtag}")

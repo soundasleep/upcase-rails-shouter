@@ -29,6 +29,11 @@
     </div>
   <% end %>
 
+  <%= form_for(:search, url: search_path, method: :get) do |f| %>
+    <%= f.text_field :q %>
+    <%= f.submit "Search" %>
+  <% end %>
+
 <%= yield %>
 
 </body>
